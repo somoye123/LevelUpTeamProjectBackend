@@ -2,8 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
-const CustomerRoute = require("./routes/EmployeeRoute");
-const LoanRequestRoute = require("./routes/LeaveRequestRoute");
+const CustomerRoute = require("./routes/CustomerRoute");
+const LoanRequestRoute = require("./routes/LoanRequestRoute");
 const env = require("./env");
 const app = express();
 
@@ -33,7 +33,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.use("/customer", CustomerRoute);
-
 app.use("/loan", LoanRequestRoute);
 
 app.listen(env.port).on("listening", () => {

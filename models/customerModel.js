@@ -1,14 +1,10 @@
 const mongoose = require("mongoose");
 
 /**
- * mongoose writer schema
+ * mongoose customer schema
  */
 
-const employeeSchema = new mongoose.Schema({
-  companyName: {
-    type: String,
-    required: true
-  },
+const customerSchema = new mongoose.Schema({
   firstName: {
     type: String,
     required: true
@@ -17,14 +13,9 @@ const employeeSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  dob: {
-    type: String
-  },
-  department: {
-    type: String
-  },
-  manager: {
-    type: String
+  occupation: {
+    type: String,
+    required: true
   },
   email: {
     type: String,
@@ -32,11 +23,12 @@ const employeeSchema = new mongoose.Schema({
     unique: true,
     lowercase: true
   },
-  country: {
-    type: String
+  dob: {
+    type: Date
   },
-  time_zone: {
-    type: String
+  img: {
+    data: Buffer,
+    contentType: String
   },
   password: {
     type: String,
@@ -47,6 +39,6 @@ const employeeSchema = new mongoose.Schema({
 });
 
 //model which provides us with an interface to iteract with our data
-const EmployeeModel = mongoose.model("Employee", employeeSchema);
+const CustomerModel = mongoose.model("Customer", customerSchema);
 
-module.exports = EmployeeModel;
+module.exports = CustomerModel;
