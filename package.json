@@ -11,6 +11,7 @@
   "author": "Somoye Ayotunde <somoye.ayotunde@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@sendgrid/mail": "^6.4.0",
     "bcrypt": "^3.0.6",
     "cors": "^2.8.5",
     "dotenv": "^7.0.0",
