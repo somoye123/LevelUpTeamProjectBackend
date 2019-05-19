@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 /**
- * mongoose customer schema
+ * Mongoose customer schema which is a description/blueprint of how we want our data to look like
  */
 
 const customerSchema = new mongoose.Schema({
@@ -29,6 +29,10 @@ const customerSchema = new mongoose.Schema({
   img: {
     data: Buffer,
     contentType: String
+  },
+  isVerified: {
+    type: Boolean,
+    default: false
   },
   password: {
     type: String,
